@@ -17,10 +17,12 @@ func main() {
 	targetJw := 121.6
 	targetWd := 37.6
 	targetH := 60.0
-
+	
+	//计算目标点相对于参考点的极坐标
 	P := coordtarns.JWH2RAE_S(coordtarns.GeoCoord{LocJd, locaWd, localH},
 		coordtarns.GeoCoord{targetJw, targetWd, targetH})
-
+		
+	//相对于参考点的极坐标转换为地理坐标
 	G := coordtarns.RAE2JWH_S(coordtarns.GeoCoord{LocJd, locaWd, localH}, P)
 
 	fmt.Print(P, G)
